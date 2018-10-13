@@ -1,0 +1,50 @@
+page-homedetail {
+    .home-img{
+        height: 157px;
+        padding-left: 67px;
+    }
+    .home-text{
+        padding-top: 12px;
+        line-height: 1.5;
+        text-align: left;
+        font-weight: 300;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .card-background-page .card-title {
+        position: absolute;
+        top: 36%;
+        // font-size: 2em;
+        // width: 100%;
+        // font-weight: 700;
+        // color: #fff;
+    }
+    .card-background-page .card-subtitle {
+        font-size: 1em;
+        position: absolute;
+        top: 52%;
+        width: 100%;
+        color: #fff;
+    }
+    .card-background-page ion-card {
+        position: relative;
+        text-align: center;
+    }
+    .logo-img-size img{
+        width: 33px;
+        margin-right: 17px;
+        padding-left: 8px;
+    }
+    .logo-img-size{
+        padding-left: 4px;
+    }
+    .sub-title-class{
+        color: #f60;
+        font-size: 20px;
+    }
+    .quote-class{
+        text-align: left;
+        font-size: 20px;
+        padding-left: 10px;
+    }
+}

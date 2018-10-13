@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar  color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Support Form</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form [formGroup]="contact">
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input formControlName="name" type="text" [(ngModel)]="contact.name" name="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input formControlName="email" type="text" [(ngModel)]="contact.email" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Company</ion-label>
+      <ion-input formControlName="company" type="text" [(ngModel)]="contact.company" name="company"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Phone</ion-label>
+      <ion-input type="tel" formControlName="phone" [(ngModel)]="contact.phone" name="phone"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Ticket Type</ion-label>
+        <ion-select [(ngModel)]="contact.tickettype" name="tickettype" formControlName="tickettype">
+          <ion-option>Support</ion-option>
+          <ion-option>Feature</ion-option>
+          <ion-option>Bug</ion-option>
+          <ion-option>Other</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Message</ion-label>
+      <ion-textarea [(ngModel)]="contact.message" formControlName="message" name="message"></ion-textarea>
+    </ion-item>
+      <ion-item>
+        <p>{{imageURI}}</p>
+        <button class="file-upload-class" ion-button color="secondary" (click)="getImage()">Attachment</button>
+      </ion-item>
+
+    <button ion-button type="submit" block (click)="supportFormSubmit()" [disabled]="!contact.valid">Submit</button>
+  </form>
+</ion-content>

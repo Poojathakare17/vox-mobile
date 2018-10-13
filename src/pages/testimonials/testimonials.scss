@@ -1,0 +1,36 @@
+page-testimonials {
+    .sub-title-class{
+        font-size: 13px;
+        color: #483333;
+        font-weight: 500;
+    }
+    .star-class{
+        // text-align: right;
+        color: #ffef1b;
+        // margin-top: -24px;
+    }
+    .card-title-testimonial{
+        color: #222020;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    
+.container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .container img {vertical-align: middle;}
+  
+  .container .content {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 100%;
+    padding: 0px;
+  }
+}

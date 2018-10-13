@@ -1,0 +1,12 @@
+{
+  "name": "myfirstionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxies": [{
+    "path": "/json",
+    "proxyUrl": "https://localhost/vox-backend/index.php/json"
+  }]
+
+}

@@ -1,0 +1,35 @@
+page-hello-ionic {
+    ion-slides {
+        height: auto;
+      }
+      .fix-card-body{
+          height: 26px;
+          margin-bottom: 7px;
+      }
+      .title-class{
+        font-size: 10px;
+        line-height: 1.2;
+      }
+      .home-title{
+        text-align: center;
+        font-size: inherit;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        font-weight: 300 !important;
+      }
+      .home-main-title{
+        text-align: center;
+        font-size: 21px;
+        font-weight: 300;
+        color: #F60;
+      }
+      .home-para{
+        font-weight: 100;
+        text-align: center;
+        font-size: 13px;
+        font-style: italic;
+      }
+      .horizontal-line{
+        margin-left: -34px;
+      }
+}

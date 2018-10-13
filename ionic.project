@@ -1,0 +1,10 @@
+{
+  "name": "proxy-example",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/json",
+      "proxyUrl": "http://voxdemo.com/E1003/vox-backend/index.php/json"
+    }
+  ]
+}

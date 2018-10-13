@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="header-banner">
+    <ion-slides *ngIf="sliders && sliders.length" autoplay="1500" class="slideroption" pager="true" loop="true" speed="300" parallaxed="true">
+      <ion-slide *ngFor="let slide of sliders">
+        <img src="{{globalvar.imageUrl}}{{slide.image}}" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div>
+      <ion-slides  autoplay="1500" class="slideroption" loop="true" speed="800" show-pager="false">
+        <ion-slide>
+          <img src="../../assets/imgs/slide-1.png" />
+        </ion-slide>
+        <ion-slide>
+            <img src="../../assets/imgs/slide-2.png" />
+          </ion-slide>
+      </ion-slides>
+    </div>
+  <div class="home-main-title">Vox Populi</div>
+  <div class="home-title">The Digital Marketing Hub</div>
+  <div class="home-para">holding a rich and glamorous history of a one-stop advertising and it solutions hub, vox populi has knocked doors of the ‘digital marketing world’ with a fresh scent of services to cover the complete radial horizon of this giant industry.</div>
+  <img class="horizontal-line" src="../../assets/imgs/horizontal-line.png" />
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of items" col-4 no-padding (click)="itemTapped($event, item)">
+        <ion-card>
+          <img src="{{globalvar.imageUrl}}{{item.logo}}" />
+          <ion-card-content>
+            <ion-card-title class="title-class fix-card-body">
+              {{item.name}}
+            </ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
