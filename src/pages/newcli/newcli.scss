@@ -1,4 +1,4 @@
-page-client {
+page-newcli {
     .main-container {
         position: relative;
         margin: 0 auto;
@@ -8,9 +8,8 @@ page-client {
         bottom: 0;
         background: rgb(0, 0, 0); /* Fallback color */
         background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-        
         width: 100%;
-        padding: 20px;
+        padding: 3px;
       }
       .content p{
         color: #ffffff;

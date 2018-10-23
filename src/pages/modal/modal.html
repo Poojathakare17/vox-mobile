@@ -10,7 +10,7 @@
         <ion-grid>
             <ion-row>
               <ion-col col-8>
-                  <ion-title>Modal</ion-title>
+                  <ion-title>{{selectedTestimonial.name}}</ion-title>
               </ion-col>
               <ion-col col-4>
                   <ion-icon name="close" (click)="dismiss()" style="width: 8px;
@@ -30,21 +30,18 @@
           <ion-col>
               <img style="display: block;
               margin-left: auto;
-              margin-right: auto;" src="../../assets/imgs/avtar-01.png">
+              margin-right: auto;" src="{{globalvar.imageUrl}}{{selectedTestimonial.image}}">
             <ion-card-title class="card-title-testimonial">
-              Siegfried loreal
+                {{selectedTestimonial.name}}
             </ion-card-title>
 
-            <p class="sub-title-class">Managing Director - K-Active systems gmbh</p>
-            <div class="star-class">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-            </div>
-            <p>Voxpopuli is an impeccable company to work with. We had the pleasure of working with them on multiple advertising and branding projects that transformed how we reached our clients and customers. Due to their expertise we were able to increase our brand awareness and reach a wider audience. Their creative approach, professional way of work and attention to detail made it extremel</p>
-           
+            <p class="sub-title-class">{{selectedTestimonial.designation}}</p>
+            <!-- <ion-item> -->
+                <ionic3-star-rating activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#ffef1b" defaultColor="#ffef1b" readonly="false"
+                  [rating]="selectedTestimonial?.rating">
+                </ionic3-star-rating>
+              <!-- </ion-item> -->
+            <p>{{selectedTestimonial.text}}</p>
           </ion-col>
         </ion-row>
       </ion-grid>

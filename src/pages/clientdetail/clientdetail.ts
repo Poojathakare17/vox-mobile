@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { GlobalvarProvider } from '../../providers/globalvar/globalvar';
 
 
 /**
@@ -13,15 +14,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-clientdetail',
   templateUrl: 'clientdetail.html',
+  providers:[GlobalvarProvider]
 })
 export class ClientdetailPage {
-client_tab:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  selectedItem: any;
+  client_tab:any;
+  techArray:any;
+  images:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public globalvar:GlobalvarProvider) {
     this.client_tab = "project";
+    this.selectedItem = navParams.get('item');
+    this.images = this.selectedItem.multipleimages;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ClientdetailPage');
+    this.techArray = this.selectedItem.tect.split(",");
   }
+
+  
 
 }

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { NavController } from 'ionic-angular';
+import {  NavController, NavParams } from 'ionic-angular';
 import { HomedetailPage } from '../homedetail/homedetail';
 import { GlobalvarProvider } from '../../providers/globalvar/globalvar';
+// @IonicPage()
 @Component({
   selector: 'page-hello-ionic',
   templateUrl: 'hello-ionic.html',
@@ -20,15 +21,17 @@ export class HelloIonicPage {
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
   }
   getData(){
-    this.data = this.http.get(this.globalvar.adminUrl +"getallproperty");
+    this.data = this.http.get(this.globalvar.adminUrl +"getAllFeatures");
     this.data.subscribe(data => {
-      this.items =data.queryresult;
+      this.items =data;
+      console.log(this.items);
     })
   }
   getSlider(){
-    this.data = this.http.get(this.globalvar.adminUrl +"getallimages");
+    this.data = this.http.get(this.globalvar.adminUrl +"getAllSliders");
     this.data.subscribe(data => {
-      this.sliders =data.queryresult;
+      this.sliders =data;
+      console.log(this.sliders);
     })
   }
   itemTapped(event, item) {

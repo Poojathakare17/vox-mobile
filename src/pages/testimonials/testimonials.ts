@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { GlobalvarProvider } from '../../providers/globalvar/globalvar';
 
 /**
  * Generated class for the TestimonialsPage page.
@@ -12,18 +15,30 @@ import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angul
 @Component({
   selector: 'page-testimonials',
   templateUrl: 'testimonials.html',
+  providers:[GlobalvarProvider]
 })
 export class TestimonialsPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+  data:Observable<any>;
+  items: any[] = [];
+  constructor(public navParams: NavParams, public modalCtrl: ModalController,public http:HttpClient,public navCtrl: NavController, public globalvar:GlobalvarProvider) {
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+    this.getTestimonialsData();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TestimonialsPage');
   }
-  openModal(){
-    const myModal = this.modalCtrl.create('ModalPage');
+  openModal(item){
+    const myModal = this.modalCtrl.create('ModalPage',{item: item});
     myModal.present();
+  }
+  getTestimonialsData(){
+    this.data = this.http.get(this.globalvar.adminUrl +"getAllTestimonials");
+    this.data.subscribe(data => {
+      this.items =data;
+      console.log(this.items);
+    })
   }
 
 }

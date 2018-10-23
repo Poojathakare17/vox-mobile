@@ -62,8 +62,11 @@ export class SupportformPage {
         fileTransfer.upload(this.imageURI, this.globalVar.adminUrl+'fileUpload', options)
           .then((data) => {
             console.log(data.response);
-            if(data.response == "false"){
+            if(data.response.toString() === "false"){
               console.log("resposne is false");
+              this.showAlert();
+              this.contact.reset();
+              this.imageURI='';
             }
             this.actualImageName = data.response;
           // this.imageURI=[];
@@ -80,7 +83,7 @@ export class SupportformPage {
     
     this.contact.value.file = this.actualImageName;
     console.log(this.contact.value);
-    this.data = this.http.post('http://voxdemo.com/E1003/vox-backend/index.php/json/submitContactForm',this.contact.value);
+    this.data = this.http.post(this.globalVar.adminUrl +'submitContactForm',this.contact.value);
     this.data.subscribe(data => {
       console.log(data);
       if(data && data.value === true){
@@ -95,6 +98,14 @@ export class SupportformPage {
     const alert = this.alertCtrl.create({
       title: 'Thank you!',
       subTitle: 'Your Support request is sent!',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+  showError() {
+    const alert = this.alertCtrl.create({
+      title: 'Sorry!',
+      subTitle: 'Something went wrong!',
       buttons: ['OK']
     });
     alert.present();

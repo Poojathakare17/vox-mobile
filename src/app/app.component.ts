@@ -8,12 +8,10 @@ import { SupportformPage } from '../pages/supportform/supportform';
 import { ContactPage } from '../pages/contact/contact';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { ClientPage } from '../pages/client/client';
 import { TestimonialsPage } from '../pages/testimonials/testimonials';
 import { BlogPage } from '../pages/blog/blog';
 import { GallerycategoryPage } from '../pages/gallerycategory/gallerycategory';
-
-
+import { NewcliPage } from '../pages/newcli/newcli';
 
 @Component({
   templateUrl: 'app.html'
@@ -39,7 +37,7 @@ export class MyApp {
       // { title: 'List', component: ListPage },
       { title: 'Support Form',icon: 'paper', component: SupportformPage },
       { title: 'Contact Us',icon: 'contact' ,component: ContactPage },
-      { title: 'Clients',icon: 'people' ,component: ClientPage },
+      { title: 'Clients',icon: 'people' ,component: NewcliPage },
       { title: 'Blogs',icon: 'list' ,component: BlogPage },
       { title: 'Testimonials',icon: 'people' ,component: TestimonialsPage },
       { title: 'Gallery',icon: 'camera' ,component: GallerycategoryPage }

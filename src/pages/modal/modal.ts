@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
-
+import { GlobalvarProvider } from '../../providers/globalvar/globalvar';
 /**
  * Generated class for the ModalPage page.
  *
@@ -12,10 +12,12 @@ import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angula
 @Component({
   selector: 'page-modal',
   templateUrl: 'modal.html',
+  providers:[GlobalvarProvider]
 })
 export class ModalPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  selectedTestimonial:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,public globalvar:GlobalvarProvider) {
+    this.selectedTestimonial = navParams.get('item');
   }
 
   ionViewDidLoad() {

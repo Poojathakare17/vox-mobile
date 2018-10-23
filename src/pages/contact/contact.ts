@@ -38,9 +38,10 @@ export class ContactPage {
   }
   getContactDetails() {
     console.log(this.globalvar.adminUrl);
-    this.data = this.http.get(this.globalvar.adminUrl + "getCompanyContactDetails");
+    this.data = this.http.get(this.globalvar.adminUrl + "getsinglecontactpage");
     this.data.subscribe(data => {
-      this.contactDetails = data.data;
+      this.contactDetails = data;
+      console.log(data);
 
     })
   }

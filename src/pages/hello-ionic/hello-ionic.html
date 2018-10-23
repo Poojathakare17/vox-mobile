@@ -35,10 +35,10 @@
     <ion-row>
       <ion-col *ngFor="let item of items" col-4 no-padding (click)="itemTapped($event, item)">
         <ion-card>
-          <img src="{{globalvar.imageUrl}}{{item.logo}}" />
+          <img src="{{globalvar.imageUrl}}{{item.image}}" />
           <ion-card-content>
             <ion-card-title class="title-class fix-card-body">
-              {{item.name}}
+              {{item.title}}
             </ion-card-title>
           </ion-card-content>
         </ion-card>

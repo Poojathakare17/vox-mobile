@@ -14,25 +14,11 @@
 <ion-content>
   <ion-grid>
     <ion-row col-12 no-padding>
-      <ion-col col-4>
-        <img src="../../assets/imgs/1.jpg" style="    height: 120px;     margin-top: -6px;">
+      <ion-col col-4  *ngFor="let singleImage of galleryImages" >
+        <img src="{{globalvar.imageUrl}}{{singleImage.image}}" imageViewer style="    height: 120px;     margin-top: -6px;">
       </ion-col>
-      <ion-col col-4>
-        <img src="../../assets/imgs/2.jpg" style="    height: 120px;     margin-top: -6px;">
-      </ion-col>
-      <ion-col col-4>
-        <img src="../../assets/imgs/3.jpg" style="    height: 120px;     margin-top: -6px;">
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col col-4>
-        <img src="../../assets/imgs/3.jpg" style="    height: 120px;     margin-top: -6px;">
-      </ion-col>
-      <ion-col col-4>
-        <img src="../../assets/imgs/2.jpg" style="    height: 120px;     margin-top: -6px;">
-      </ion-col>
-      <ion-col col-4>
-        <img src="../../assets/imgs/1.jpg" style="    height: 120px;     margin-top: -6px;">
+      <ion-col col-12 *ngIf="galleryImages.length == 0">
+        <p style="text-align: center">No Images Found</p>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -20,6 +20,7 @@ export class HomedetailPage {
   selectedItem: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public globalvar :GlobalvarProvider) {
     this.selectedItem = navParams.get('item');
+    console.log(this.selectedItem);
   }
 
   ionViewDidLoad() {

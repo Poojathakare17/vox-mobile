@@ -14,21 +14,18 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <div class="pins">
-    <ion-card class="pin" *ngFor="let post of posts" (click)="itemTapped($event)">
-      <img [src]="post.image" />
-      <!-- <div *ngIf="post.description" class="post-description"> -->
-      <!-- </div> -->
+    <ion-card class="pin" *ngFor="let galleryCategory of galleryCategories" (click)="itemTapped($event,galleryCategory.galleryimages)">
+      <img src="{{globalvar.imageUrl}}{{galleryCategory.image}}">
       <ion-item>
-        <!-- <ion-avatar item-start>
-          <img src="assets/img/avatar/marty-avatar.png">
-        </ion-avatar> -->
         <small style="font-size: 92%;
         color: #f60;
-        font-weight: 700;">{{post?.title}}</small>
-        <!-- <p><small>Category</small></p> -->
+        font-weight: 700;">{{galleryCategory?.name}}</small>
       </ion-item>
     </ion-card>
   </div>
+  <ion-item *ngIf="galleryCategories && galleryCategories.length == 0">
+      <p style="text-align: center">No Image Categories Found</p>
+    </ion-item>
 </ion-content>

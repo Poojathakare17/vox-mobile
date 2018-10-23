@@ -13,8 +13,10 @@ export class GlobalvarProvider {
   public imageUrl:string;
   constructor(public http: HttpClient) {
     console.log('Hello GlobalvarProvider Provider');
-    this.adminUrl = "http://voxdemo.com/E1003/vox-backend/index.php/json/";
-    this.imageUrl = "http://voxdemo.com/E1003/vox-backend/uploads/";
+    this.adminUrl = "http://voxdemo.com/E1003/voxapp/index.php/json/";
+    this.imageUrl = "http://voxdemo.com/E1003/voxapp/uploads/";
+    // this.adminUrl = "http://voxdemo.com/E1003/vox-backend/index.php/json/";
+    // this.imageUrl = "http://voxdemo.com/E1003/vox-backend/uploads/";
   }
 
 }

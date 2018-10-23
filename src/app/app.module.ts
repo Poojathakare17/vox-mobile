@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler,NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { BlogPage } from '../pages/blog/blog';
@@ -11,7 +11,6 @@ import { GallerycategoryPage } from '../pages/gallerycategory/gallerycategory';
 import { ListPage } from '../pages/list/list';
 import { SupportformPage }  from '../pages/supportform/supportform';
 import { ContactPage } from '../pages/contact/contact';
-import { ClientPage } from '../pages/client/client';
 import { TestimonialsPage } from '../pages/testimonials/testimonials';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,6 +24,10 @@ import { ServerurlProvider } from '../providers/serverurl/serverurl';
 import { GlobalvarProvider } from '../providers/globalvar/globalvar';
 import { GalleryPage } from '../pages/gallery/gallery';
 import { IonicImageViewerModule } from 'ionic-img-viewer';
+import { NewcliPage } from '../pages/newcli/newcli';
+import { CommonModule } from "@angular/common";
+import { StarRatingModule } from 'ionic3-star-rating';
+import {TimeAgoPipe} from 'time-ago-pipe';
 // import { ModalPage } from '../pages/modal/modal';
 
 @NgModule({
@@ -36,19 +39,22 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
     SupportformPage,
     HomedetailPage,
     ContactPage,
-    ClientPage,
     TestimonialsPage,
     BlogPage,
     ClientdetailPage,
     GallerycategoryPage,
-    GalleryPage
+    GalleryPage,
+    NewcliPage,
+    TimeAgoPipe
     // ReactiveFormsModule
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
-    IonicImageViewerModule
+    IonicImageViewerModule,
+    CommonModule,
+    StarRatingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -59,12 +65,12 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
     SupportformPage,
     HomedetailPage,
     ContactPage,
-    ClientPage,
     TestimonialsPage,
     BlogPage,
     ClientdetailPage,
     GallerycategoryPage,
-    GalleryPage
+    GalleryPage,
+    NewcliPage
     // ReactiveFormsModule
   ],
   providers: [
@@ -79,6 +85,7 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
     Camera,
     ServerurlProvider,
     GlobalvarProvider
-  ]
+  ],
+  schemas: [NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}

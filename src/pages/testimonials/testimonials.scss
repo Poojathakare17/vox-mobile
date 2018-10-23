@@ -33,4 +33,15 @@ page-testimonials {
     width: 100%;
     padding: 0px;
   }
+  .readmore-class{
+    text-align: right;
+    color: #f60;
+    font-size: 13px;
+    font-weight: 100;
+  }
+  .testimonial-text{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
